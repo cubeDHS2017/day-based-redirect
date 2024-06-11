@@ -9,19 +9,19 @@
             var day = new Date().getDay(); // Get the current day of the week (0 = Sunday, 1 = Monday, etc.)
 
             // Define your day-based URLs
-            var dayUrls = [
-                "https://www.reddit.com",    // Sunday
-                "https://www.reddit.com",    // Monday
-                "https://www.reddit.com",    // Tuesday
-                "https://www.reddit.com",    // Wednesday
-                "https://www.reddit.com",    // Thursday
-                "https://www.reddit.com",    // Friday
-                "https://www.reddit.com"     // Saturday
-            ];
+            var dayUrls = {
+                0: "https://www.reddit.com",    // Sunday
+                1: "https://www.reddit.com",    // Monday
+                2: "https://www.reddit.com",    // Tuesday
+                3: "https://www.reddit.com",    // Wednesday
+                4: "https://www.reddit.com",    // Thursday
+                5: "https://www.reddit.com",    // Friday
+                6: "https://www.reddit.com"     // Saturday
+            };
 
             // Redirect to the URL based on the current day
             if (dayUrls[day]) {
-                window.location.replace(dayUrls[day]);
+                window.location.href = dayUrls[day];
             }
         });
     </script>
@@ -30,15 +30,15 @@
     <p>If you are not redirected automatically, follow the <a id="redirect-link" href="#">link</a>.</p>
     <script>
         var day = new Date().getDay();
-        var dayUrls = [
-            "https://www.reddit.com",    // Sunday
-            "https://www.reddit.com",    // Monday
-            "https://www.reddit.com",    // Tuesday
-            "https://www.reddit.com",    // Wednesday
-            "https://www.reddit.com",    // Thursday
-            "https://www.reddit.com",    // Friday
-            "https://www.reddit.com"     // Saturday
-        ];
+        var dayUrls = {
+            0: "https://www.reddit.com",    // Sunday
+            1: "https://www.reddit.com",    // Monday
+            2: "https://www.reddit.com",    // Tuesday
+            3: "https://www.reddit.com",    // Wednesday
+            4: "https://www.reddit.com",    // Thursday
+            5: "https://www.reddit.com",    // Friday
+            6: "https://www.reddit.com"     // Saturday
+        };
         document.getElementById("redirect-link").href = dayUrls[day];
     </script>
 </body>
