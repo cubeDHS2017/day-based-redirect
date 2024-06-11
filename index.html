@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-based Redirect</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var day = new Date().getDay(); // Get the current day of the week (0 = Sunday, 1 = Monday, etc.)
+
+            // Define your day-based URLs
+            var dayUrls = [
+                "http://example.com/sunday",    // Sunday
+                "http://example.com/monday",    // Monday
+                "reddit.com/",   // Tuesday
+                "http://example.com/wednesday", // Wednesday
+                "http://example.com/thursday",  // Thursday
+                "http://example.com/friday",    // Friday
+                "http://example.com/saturday"   // Saturday
+            ];
+
+            // Redirect to the URL based on the current day
+            if (dayUrls[day]) {
+                window.location.href = dayUrls[day];
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, follow the <a id="redirect-link" href="#">link</a>.</p>
+    <script>
+        document.getElementById("redirect-link").href = dayUrls[new Date().getDay()];
+    </script>
+</body>
+</html>
