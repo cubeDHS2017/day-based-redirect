@@ -12,7 +12,7 @@
             var dayUrls = [
                 "http://example.com/sunday",    // Sunday
                 "http://example.com/monday",    // Monday
-                "https://reddit.com/",   // Tuesday
+                "http://reddit.com",   // Tuesday
                 "http://example.com/wednesday", // Wednesday
                 "http://example.com/thursday",  // Thursday
                 "http://example.com/friday",    // Friday
@@ -21,7 +21,7 @@
 
             // Redirect to the URL based on the current day
             if (dayUrls[day]) {
-                window.location.href = dayUrls[day];
+                window.location.replace(dayUrls[day]);
             }
         });
     </script>
@@ -29,7 +29,17 @@
 <body>
     <p>If you are not redirected automatically, follow the <a id="redirect-link" href="#">link</a>.</p>
     <script>
-        document.getElementById("redirect-link").href = dayUrls[new Date().getDay()];
+        var day = new Date().getDay();
+        var dayUrls = [
+            "http://example.com/sunday",    // Sunday
+            "http://example.com/monday",    // Monday
+            "http://reddit.com",   // Tuesday
+            "http://example.com/wednesday", // Wednesday
+            "http://example.com/thursday",  // Thursday
+            "http://example.com/friday",    // Friday
+            "http://example.com/saturday"   // Saturday
+        ];
+        document.getElementById("redirect-link").href = dayUrls[day];
     </script>
 </body>
 </html>
